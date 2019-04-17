@@ -1,9 +1,11 @@
 import React from 'react';
 
-export default function index() {
-  return (
-    <div>
-      <h1>sign out</h1>
-    </div>
-  );
-}
+import { withFirebase } from '../Firebase';
+
+const SignOutButton = ({ firebase }) => (
+  <button type='button' onClick={firebase.doSignOut}>
+    Sign Out
+  </button>
+);
+
+export default withFirebase(SignOutButton);
